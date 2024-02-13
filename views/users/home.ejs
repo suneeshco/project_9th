@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=locals.title ? title : 'login System'%></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+
+</head>
+<body>
+
+  <header class="container-fluid bg-info">
+      <nav class="navbar navbar-expand-lg fixed-top bg-info">
+          <div class="container">
+              <h3>USER</h3>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <div class="col-md-10">
+                  <ul class="navbar-nav ">
+                      <li class="navbar-item mx-5">
+                          <a href="#"  class="homelink">Home</a>
+                      </li>
+                      <li class="navbar-item mx-5">
+                          <a href="#"class="homelink">About</a>
+                      </li>
+                      <li class="navbar-item mx-5">
+                          <a href="#"class="homelink">Services</a>
+                      </li>
+                      <li class="navbar-item mx-5">
+                          <a href="#"class="homelink">Contact Us</a>
+                      </li>
+                  </ul>
+                  </div>
+                  <div class="col-md-2">
+                      <button class="btn border rounded btn-danger "><a href="/logout" id="logout">LOGOUT</a></button>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <div class="px-4 pt-5 my-5 text-center ">
+      <h1 class="display-4 fw-bold  text-warning">Welcome To Home</h1>
+    </div>
+<%-include("../layouts/footer.ejs")%>

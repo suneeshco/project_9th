@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b600cb21a6.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <a href="/admin/logout">Logout</a>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/adminlogout" tabindex="-1">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+  <br>
+  
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+    <div class="btn-group me-2">
+      <a href="/admin/add-user" class="btn btn-sm btn-outline-secondary">Add User</a>
+    </div>
+  </div>
+</div>
+  <table class="table table-striped w-9">
+    <!-- <caption class="table-dark bg-dark position-relative">Manage users
+      <a href="#addEmployeeModal" class="btn btn-success position-absolute top-1 end-0" data-toggle="modal">
+        <i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+        <a href="#deleteEmployeeModal" class="btn btn-danger position-absolute top-1 end-1" data-toggle="modal">
+        <i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+    </caption> -->
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%if(users.length>0){%>
+        <%for(let i=0;i<users.length;i++){%>
+          <tr>
+            <td><%=users[i].name%></td>
+            <td><%=users[i].email%></td>
+            <td><%=users[i].mobile%></td>
+            <td>
+              <!-- <button type="button" class="btn btn-warning">
+                <i class="fa-solid fa-pen"></i></button>
+              <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button> -->
+              <div>
+                
+                <a href="/admin/edit-user?id=<%= users[i]._id%>" type="button" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
+                <a href="/admin/delete-user?id=<%= users[i]._id%>" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+              </div>
+            </td>
+          </tr>
+        <%}%>
+      <%}else{%>
+        <tr>
+        <td>Users Not found</td>
+      </tr>
+      <%}%>
+      <!-- <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<%-include("../layouts/footer.ejs")%>

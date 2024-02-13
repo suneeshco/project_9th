@@ -1,0 +1,35 @@
+<%-include("../layouts/header.ejs")%>
+<div class="text-center center-div" id="login">
+  <div class="container w-25 py-4 border mt-5 rounded">
+      <div class="title pb-5">
+          <h2 class="font-weight-bold text-warning">Login System</h2>
+          
+      </div>
+      <% if(locals.logout){%>
+          <div class="alter alert-success text-center text-success mb-3">
+              <%=logout%> 
+          </div> 
+          <%}%>
+      <form action="/" method="post">
+          <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email Address">
+              <small class="form-text text-warning">Registered Email address</small>
+          </div>
+          <div class="form-group">
+              <input type="password" name="password" class="form-control" placeholder="password">
+          </div>
+          <button type="submit" class="btn btn-success rounded-pill mt-3">SUBMIT</button>
+      </form>
+      <br><br>
+      <div class="alter alert-success text-center text-danger mb-3">
+          <%= locals.message %>
+      </div>
+      <h6 class="text-white">You don't have any account? <a href="/register" class="text-success">Sign Up </a> here</h6>
+      <br>
+      
+  </div>
+</div>
+<%-include("../layouts/footer.ejs")%>
+
+
+

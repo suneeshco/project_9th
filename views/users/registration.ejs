@@ -1,0 +1,38 @@
+<%-include("../layouts/header.ejs")%>
+<div class="text-center center-div" id="login">
+  <div class="container w-25 py-4 border  rounded">
+      <div class="title pb-3">
+          <h2 class="font-weight-bold text-warning">User Registration</h2>
+          
+      </div>
+      <form action="/register" method="POST" id="form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Enter Name" class="form-control mt-3" id="name">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Enter Email" class="form-control mt-3" id="email">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+          <input type="text" name="mobile" placeholder="Enter Mobile Number" class="form-control mt-3" id="mobile">
+          <div class="error"></div>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" placeholder="Enter Password" class="form-control mt-3 " id="password">
+          <div class="error"></div>
+        </div>
+        <input type="submit" value="Register" class="btn btn-success rounded-pill mt-3">
+      </form>
+
+      <%if(typeof message !=="undefined"){%>
+        <p style="color:green"><%=message%></p>
+      <%}%>
+      <br><br>
+      <h6 class="text-white">If you are registered, then  <a href="/" class="text-success">Login </a> here</h6>
+      <br>
+      
+  </div>
+</div>
+  <script src="/js/loginValidation.js"></script>
+<%-include("../layouts/footer.ejs")%>
