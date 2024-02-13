@@ -15,5 +15,6 @@ app.use("/",userRoute)
 app.use("/",adminRoute)
 
 app.listen("3000",()=>{
-    console.log("server running...")
+    console.log("server running...........");
+    console.log(`port 3000`);
 })
